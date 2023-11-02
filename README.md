@@ -1,46 +1,53 @@
-# Getting Started with Create React App and Redux
+# Linkedin --clone, created by using `React js` and `Redux toolkit` and `CSS` and `Firebase`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Steps for Running this code in your leptop
+step1 : Create project directory, then open created directory in vs code.
 
-## Available Scripts
+stpe2 : Then, Open new terminal in vs code and paste [  `git clone https://github.com/amanswami51/Linkedin-clone.git`  ].
 
-In the project directory, you can run:
+step3 : Then run this command [ `npm start`  ] in terminal for the development mode.
 
-### `npm start`
+Then open browser and run this link `http://localhost:3000` to view it in your browser.\
+Then page looks like, First Register for proceeding and Signed in the existing account.
+<img width="914" alt="Screenshot 2023-11-03 020726" src="https://github.com/amanswami51/Linkedin-clone/assets/126395625/c740c512-cc0c-449c-b3d5-72585626e3c0">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+After authentication
+<img width="933" alt="Screenshot 2023-11-03 014920" src="https://github.com/amanswami51/Linkedin-clone/assets/126395625/bb75e79b-c78e-4069-87ee-b8be2ef8cc62">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Steps for hosting on firebase
+step1: search `firebase console` and create the account
 
-### `npm test`
+step2: Then add project on firebase\
+<img width="295" alt="Screenshot 2023-11-03 023321" src="https://github.com/amanswami51/Linkedin-clone/assets/126395625/fde69ca2-f7b5-4f48-a23b-a425240cca2b">
+<img width="344" alt="Screenshot 2023-11-03 023747" src="https://github.com/amanswami51/Linkedin-clone/assets/126395625/bfe83a69-25e5-43c1-80c6-4dc96195e5a9">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+step3: Then click on `build`(left-top side), and select `hosting`
+<img width="549" alt="Screenshot 2023-11-03 024100" src="https://github.com/amanswami51/Linkedin-clone/assets/126395625/ec9e199a-bbcb-4449-ba59-a9fe67c3d80e">
 
-### `npm run build`
+step4: Then click on `get started`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+step5: open terminal of vs code in project directory and paste `npm install -g firebase-tools`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+step6: after step5, paste `firebase login` in terminal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+step7: after login, paste `firebase init` in terminal. Then console asked some questions.\
+`questions1` Are you ready to proceed? (Y/n) `Answer` Y \
+`questions2` >( ) Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys `Answer` press [spacebar] button then press [Enter] button of keyboard. \
+`questions3` ? Please select an option: `Answer` Use arrow keys and select [ > Use an existing project ] and press Enter. Then select [ linkedin-clon-95b09 (Linkedin-clon) ] project. \
+`questions4` ? What do you want to use as your public directory? `Answer` build \
+`questions5` ? Configure as a single-page app (rewrite all urls to /index.html)? (y/N) `Answer` Y \
+`question6` ? Set up automatic builds and deploys with GitHub? (y/N) `Answer` N 
 
-### `npm run eject`
+step8: Then, `npm run build` enter this command in console.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+step9: Then, `firebase deploy` enter this command in console.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
+## Learn More About React Js
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+To learn Redux toolkit, check out the [Redux toolkit documentation](https://redux-toolkit.js.org/)
+
