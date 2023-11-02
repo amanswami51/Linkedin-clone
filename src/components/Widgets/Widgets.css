@@ -1,0 +1,25 @@
+.widgets{
+    margin: 20px 60px 0px 25px;
+    flex: 0.2;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+}
+
+
+.timeplusreader{
+    display: flex;
+    >p{
+        margin: 0px 5px;
+        font-size: 11px;
+        color: gray;
+    }
+}
+
+.widgetitem >h4{
+    padding: 0px 5px;
+}
+
+.widgetitem:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}

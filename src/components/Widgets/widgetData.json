@@ -1,0 +1,50 @@
+[
+    {
+        "id":"1",
+        "news":"Famiy offices make hotels foray",
+        "timePosted":"2d ago",
+        "numReader":"23 readers"
+    },
+    {
+        "id":"2",
+        "news":"Silver economy sparks job boom",
+        "timePosted":"3d ago",
+        "numReader":"1535 readers"
+    },
+    {
+        "id":"3",
+        "news":"Retail takes the IPO route",
+        "timePosted":"1d ago",
+        "numReader":"529 readers"
+    },
+    {
+        "id":"4",
+        "news":"Skyroot Aerospace raises $27.5M",
+        "timePosted":"3d ago",
+        "numReader":"2326 readers"
+    },
+    {
+        "id":"5",
+        "news":"Succession planning in focus",
+        "timePosted":"2d ago",
+        "numReader":"368 readers"
+    },
+    {
+        "id":"6",
+        "news":"Finance seeks fresh talent",
+        "timePosted":"1d ago",
+        "numReader":"545 readers"
+    },
+    {
+        "id":"7",
+        "news":"Startup finances in the red",
+        "timePosted":"3d ago",
+        "numReader":"297 readers"
+    },
+    {
+        "id":"8",
+        "news":"Serial blasts kill two in kerala.",
+        "timePosted":"3d ago",
+        "numReader":"408 readers"
+    }
+]

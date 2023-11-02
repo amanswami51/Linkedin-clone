@@ -1,0 +1,14 @@
+.inputOption{
+    padding: 7px 3px;
+    display: flex;
+    margin-top: -5px;
+}
+.inputOption:hover{
+    background-color: whitesmoke;
+    border-radius: 6px;
+}
+
+.inputOption > p{
+    color: gray;
+    margin-left: 5px;
+}
