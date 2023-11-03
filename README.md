@@ -5,7 +5,9 @@ step1 : Create project directory, then open created directory in vs code.
 
 stpe2 : Then, Open new terminal in vs code and paste [  `git clone https://github.com/amanswami51/Linkedin-clone.git`  ].
 
-step3 : Then run this command [ `npm start`  ] in terminal for the development mode.
+step3 : Then, run [ `npm i` ] command in vs code terminal for installing dependencies.
+
+step4 : Then run this command [ `npm start`  ] in terminal for the development mode.
 
 Then open browser and run this link `http://localhost:3000` to view it in your browser.\
 Then page looks like, First Register for proceeding and Signed in the existing account.
@@ -13,6 +15,8 @@ Then page looks like, First Register for proceeding and Signed in the existing a
 
 After authentication
 <img width="933" alt="Screenshot 2023-11-03 014920" src="https://github.com/amanswami51/Linkedin-clone/assets/126395625/bb75e79b-c78e-4069-87ee-b8be2ef8cc62">
+
+
 
 ## Steps for hosting on firebase
 step1: search `firebase console` and create the account
