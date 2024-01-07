@@ -9,7 +9,7 @@ import Post from './Post';
 import { db } from './firebase';
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../features/userSlice';
+
 
 
 function Feed() {
@@ -18,16 +18,18 @@ function Feed() {
   //we store all data from firestore in this state
   const [Posts, setPosts] = useState([])
   
-  const user = useSelector(selectUser)
+  //acess state of userSlice
+  const {userInfo} = useSelector((state)=>state.User)
+
   //add data on firestore
   const sendPost = async (e)=>{
     e.preventDefault();
     try{
-      const docRef = await addDoc(collection(db, "users"), {
-        name:user.displayName,
-        description:user.email,
+      const docRef = await addDoc(collection(db,  `${userInfo.uid}`), {
+        name:userInfo.displayName,
+        description:userInfo.email,
         message:input,
-        photoURL: user.photoURL,
+        photoURL: "userInfo.photoURL",
       });
       console.log("Document written with ID: ", docRef.id);
       fetchdata();
@@ -43,7 +45,7 @@ function Feed() {
   const fetchdata = async ()=>{
     let arr = [];
     let i = 0;
-    const querySnapshot = await getDocs(collection(db, "users"));
+    const querySnapshot = await getDocs(collection(db,  `${userInfo.uid}`));
     querySnapshot.forEach((doc) => {
         // console.log(doc.id)
         // console.log(doc.data())
@@ -154,55 +156,3 @@ export default Feed;
 // */
 
 
-
-//***************************custom Backend call************************** 
-/*
-    const host = "http://localhost:5000";
-    const [input, setInput] = useState("");
-    const [Posts, setPosts] = useState([])
-    //fetch all posts
-        const getPosts = async (username)=>{
-          try{
-              const response = await fetch(`${host}/api/post/fetchallPosts`, {
-                      method: 'POST',
-                      headers:{
-                        'content-Type': 'application/json'
-                      },
-                      body: JSON.stringify({username})
-              });
-              const json = await response.json();
-              // return json;
-              setPosts(json);
-          } 
-          catch(error){
-              console.log(error);
-          }
-        }
-        useEffect(()=>{
-          getPosts("amanswami51");
-        },[])
-       
-    //add all posts
-        const addPost = async (username, name, description, message, photoUrl)=>{
-          try {
-            const response = await fetch(`${host}/api/post/addPosts`, {
-              method: 'POST',
-              headers:{
-                'content-Type': 'application/json'
-              },
-              body: JSON.stringify({username, name, description, message, photoUrl})
-            });
-            const json = await response.json();
-            setPosts(Posts.concat(json))        
-          } 
-          catch(error){
-            console.log(error)
-          }
-        }
-    
-    const sendPost = e =>{
-        e.preventDefault();
-        addPost("amanswami51", "aman", "sofware engineer", input)
-        setInput("");
-    }
-*/

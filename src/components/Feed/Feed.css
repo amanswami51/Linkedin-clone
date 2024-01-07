@@ -10,6 +10,10 @@
     padding-bottom: 4px;
 }
 
+.feed__avtar{
+    margin: 0px 10px 0px 10px;
+}
+
 .feed__input{
     display: flex;
     padding: 10px;

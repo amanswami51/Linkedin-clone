@@ -7,7 +7,6 @@ import {auth} from '../Feed/firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 function Login() {
-    const dispatch = useDispatch();
 
     //take value from "input" fields in "text" state then use this data.
     const [text, setText] = useState({email:"", password:"", name:"", profilePic:""});
@@ -16,53 +15,57 @@ function Login() {
         setText({...text, [e.target.name]:e.target.value})
     }
 
-    //use firebase authentication
-    const loginToApp = (e)=>{
+    const dispatch = useDispatch(); //dispatch is use to call userSlice functions like "dispatch(login(payload))"
+
+    //Login*****************************
+    const loginToApp = async(e)=>{
         e.preventDefault();
-        const {email, password, name} = text;
-        if(!name){
-            return alert("Please enter a full name");
-        }
-        signInWithEmailAndPassword(auth, email, password)
-        .then((userAuth)=>{
-            dispatch(login({
-                email: userAuth.user.email,
-                uid: userAuth.user.uid,
-                displayName: userAuth.user.displayName,
-                photoURL: userAuth.user.photoURL
-            }))
-        })
-        .catch((error)=>{
-            alert(error)
-        });
-
-
-    }
-
-    //Save user information in redux store for registeration.
-    const register = ()=>{
         const {email, password, name, profilePic} = text;
         if(!name){
             return alert("Please enter a full name");
         }
-     
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((userAuth)=>{
-            updateProfile(userAuth.user, {
-                displayName: name,
-                photoURL: profilePic,
-            })
-            .then(()=>{
-                dispatch(login({
-                    email: userAuth.user.email,
-                    uid: userAuth.user.uid,
+        
+        try{
+            const res = await signInWithEmailAndPassword(auth, email, password)
+            dispatch(
+                login({
+                    email: res.user.email,
                     displayName: name,
-                    photoURL: profilePic
-                }))
-            })
-        }).catch((error)=>{
-            alert(error)
-        });
+                    photoUrl: profilePic,
+                    uid: res.user.uid,
+                    token:res.user.accessToken
+                })
+            )
+        }
+        catch(err){
+            console.log(err);
+        }
+
+
+    }
+
+    //register**************************
+    const register = async()=>{
+        const {email, password, name, profilePic} = text;
+        if(!name){
+            return alert("Please enter a full name");
+        }
+        
+        try{
+            const res = await createUserWithEmailAndPassword(auth, email, password)
+            dispatch(
+                login({
+                    email: res.user.email,
+                    displayName: name,
+                    photoUrl: profilePic,
+                    uid: res.user.uid,
+                    token:res.user.accessToken
+                })
+            )
+        }
+        catch(err){
+            console.log(err);
+        }
     }
   return (
     <div className='login'>
